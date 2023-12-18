@@ -7,4 +7,6 @@ COPY . .
 
 RUN npm install
 
-CMD ["node", "relay.js"]
+RUN npm install -g ts-node
+
+CMD ["ts-node", "relay.ts"]
