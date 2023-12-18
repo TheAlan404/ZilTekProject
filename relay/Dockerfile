@@ -7,6 +7,4 @@ COPY . .
 
 RUN npm install
 
-RUN npm install -g ts-node
-
-CMD ["ts-node", "relay.ts"]
+CMD ["npx", "tsx", "relay.ts"]
