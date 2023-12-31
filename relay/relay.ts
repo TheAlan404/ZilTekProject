@@ -8,7 +8,7 @@ const defaultData = { hosts: {} }
 const db = await JSONPreset('db.json', defaultData);
 
 const PORT = Number(process.env.PORT) || 3000;
-const ADDR = process.env.ADDR || "127.0.0.1";
+const ADDR = process.env.ADDR || "0.0.0.0";
 const REDIRECT_TO = "https://thealan404.github.io/ziltekproject";
 
 export interface ServerToClientEvents {
@@ -33,6 +33,7 @@ const app = express();
 const server = createServer(app);
 
 app.get("/", (req, res) => {
+	console.log("Redirecting someone");
 	res.redirect(REDIRECT_TO);
 });
 
