@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { IconAppWindow, IconDownload } from "@tabler/icons-react"
 
+const ZILTEK_URL = "https://ziltek.kuylar.dev/";
+
 function App() {
 	const { t, i18n: { language, changeLanguage } } = useTranslation();
 	const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
@@ -46,7 +48,11 @@ function App() {
 							</Button>
 							<Button
 								variant='light'
-								leftSection={<IconAppWindow />}>
+								leftSection={<IconAppWindow />}
+								component="a"
+								href={ZILTEK_URL}
+								
+							>
 								{t("open")}
 							</Button>
 						</Group>
