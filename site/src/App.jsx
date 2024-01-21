@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { IconAppWindow, IconDownload } from "@tabler/icons-react"
 
-const ZILTEK_URL = "https://ziltek.kuylar.dev/";
+const ZILTEK_URL = "https://ziltek.deniz.blue/";
+const DOWNLOAD_LINK = "https://github.com/TheAlan404/ZilTekProject/releases/latest";
 
 function App() {
 	const { t, i18n: { language, changeLanguage } } = useTranslation();
@@ -43,7 +44,10 @@ function App() {
 							<Button
 								variant='light'
 								color="green"
-								leftSection={<IconDownload />}>
+								leftSection={<IconDownload />}
+								component="a"
+								href={DOWNLOAD_LINK}
+							>
 								{t("download")}
 							</Button>
 							<Button
@@ -72,6 +76,7 @@ function App() {
 					<Title order={3} mb="md">{t("screenshots")}</Title>
 					{["view", "table-edit", "files"].map((n, i) => (
 						<Image
+							key={i}
 							src={"/" + language + "-" + n + ".png"}
 						/>
 					))}
